@@ -1,1 +1,1 @@
-This is a Sample Maven App. 
+This is a sample Maven App. 
