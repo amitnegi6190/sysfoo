@@ -28,7 +28,10 @@ pipeline {
     stage('Generate artifacts') {
       parallel {
         stage('package') {
-          when {branch 'master'}
+          when {
+            branch 'master'
+            expression 'false'
+          }
           agent {
             docker {
               image 'maven:3.6.3-jdk-11-slim'
