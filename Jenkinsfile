@@ -25,7 +25,7 @@ pipeline {
       }
     }
 
-    stage('package') {
+    stage('Generate artifacts') {
       parallel {
         stage('package') {
           agent {
@@ -40,7 +40,7 @@ pipeline {
           }
         }
 
-        stage('Docker BnP') {
+        stage('OCI Image build') {
           agent any
           steps {
             script {
