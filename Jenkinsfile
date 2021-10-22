@@ -30,7 +30,7 @@ pipeline {
         stage('package') {
           when {
             branch 'master'
-            expression 'false'
+            expression {false}
           }
           agent {
             docker {
