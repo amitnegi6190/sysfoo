@@ -28,6 +28,7 @@ pipeline {
     stage('Generate artifacts') {
       parallel {
         stage('package') {
+          when {branch 'master'}
           agent {
             docker {
               image 'maven:3.6.3-jdk-11-slim'
@@ -41,6 +42,7 @@ pipeline {
         }
 
         stage('OCI Image build') {
+          when {branch 'master'}
           agent any
           steps {
             script {
